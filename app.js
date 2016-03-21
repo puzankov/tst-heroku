@@ -65,7 +65,7 @@ app.all('/api/' + apiVersion + '/*', function (req, res) {
     render(req, res);
 });
 
-var server = app.listen( '8080', function () {
+var server = app.listen( '5000', function () {
     var host = server.address().adress;
     var port = server.address().port;
     console.log( 'Listening %s:%s', host, port );
