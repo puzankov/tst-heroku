@@ -41,7 +41,7 @@ function render(req, res) {
 }
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.send('<html><body><h1>My web app http API!</h1></body></html>');
 });
 
 app.get('/test/', function (req, res) {
