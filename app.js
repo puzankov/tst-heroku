@@ -4,6 +4,8 @@ var fs = require( 'fs' );
 
 var app = express();
 
+app.set('port', (process.env.PORT || 5000));
+
 var apiVersion = '1.0';
 
 function render(req, res) {
@@ -64,12 +66,8 @@ app.all('/api/' + apiVersion + '/*', function (req, res) {
     render(req, res);
 });
 
-var server = app.listen( '5000', function () {
-    var host = server.address().adress;
-    var port = server.address().port;
-    console.log( 'Listening %s:%s', host, port );
-} );
-
-
+app.listen(app.get('port'), function() {
+    console.log('Node app is running on port', app.get('port'));
+});
 
 
